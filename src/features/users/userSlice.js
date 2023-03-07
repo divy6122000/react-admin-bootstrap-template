@@ -3,8 +3,8 @@ import axios from 'axios'
 
 export const fetchUserData = createAsyncThunk('user/fetchUserData', async () => {
     try {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/users`)
-        return response.data
+        const response = await axios.get(`https://reqres.in/api/users`)
+        return response.data.data
     } catch (error) {
         return error.message
     }

@@ -22,16 +22,13 @@ const Dashboard = () => {
     }
     else if (users.status === 'succeeded') {
         // console.log("users", users)
-        content = users?.data?.map((data, i) => {
+        content = users?.data?.map((data) => {
             return <tr key={data?.id}>
-                <th scope="row">{i + 1}</th>
-                <td>{data?.name}</td>
-                <td>{data?.username}</td>
+                <th scope="row">{data?.id}</th>
+                <td><img src={data?.avatar} width={85} alt="" /></td>
+                <td>{data?.first_name}</td>
+                <td>{data?.last_name}</td>
                 <td>{data?.email}</td>
-                <td>{data?.phone}</td>
-                <td>{data?.website}</td>
-                <td>{data?.address?.city}</td>
-                <td>{data?.address?.zipcode}</td>
             </tr>
         })
     }
@@ -64,14 +61,10 @@ const Dashboard = () => {
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Username</th>
+                                        <th scope="col">Avatar</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Website</th>
-                                        <th scope="col">City</th>
-                                        <th scope="col">Zip Code</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
